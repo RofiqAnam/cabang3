@@ -1,0 +1,940 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#101827">
+    <title>Pelajar NU Magetan | Link Resmi</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <style>
+        :root {
+            --primary: #101827;
+            --secondary: #26364D;
+            --accent: #94A3B8;
+            --white: #FFFFFF;
+            --text: #172033;
+            --muted: #64748B;
+            --border: rgba(255,255,255,0.2);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            width: 100%;
+            min-width: 320px;
+            scroll-behavior: smooth;
+            -webkit-text-size-adjust: 100%;
+        }
+
+        body {
+            width: 100%;
+            min-width: 320px;
+            min-height: 100vh;
+            min-height: 100svh;
+            overflow-x: hidden;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            color: var(--text);
+            background: var(--primary);
+        }
+
+        /* BACKGROUND */
+        .background {
+            position: fixed;
+            inset: 0;
+            z-index: -2;
+            background:
+                radial-gradient(circle at 15% 15%, rgba(148,163,184,.25), transparent 30%),
+                radial-gradient(circle at 85% 70%, rgba(38,54,77,.8), transparent 35%),
+                linear-gradient(145deg, #101827, #26364D 55%, #64748B);
+        }
+
+        .background::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            opacity: .12;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.3'/%3E%3C/svg%3E");
+        }
+
+        /* MAIN CONTAINER */
+        .container {
+            width: min(100% - 40px, 1000px);
+            max-width: 1000px;
+            min-height: 100vh;
+            min-height: 100svh;
+            margin: auto;
+            padding: 32px 0 28px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* TOPBAR */
+        .topbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 32px;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 9px;
+            color: var(--white);
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: 1px;
+        }
+
+        .brand-icon {
+            width: 35px;
+            height: 35px;
+            display: grid;
+            place-items: center;
+            border-radius: 12px;
+            background: rgba(255,255,255,.13);
+            border: 1px solid var(--border);
+        }
+
+        .share-button {
+            width: 40px;
+            height: 40px;
+            display: grid;
+            place-items: center;
+            border-radius: 50%;
+            color: white;
+            background: rgba(255,255,255,.12);
+            border: 1px solid var(--border);
+            cursor: pointer;
+            transition: .3s;
+        }
+
+        .share-button:hover {
+            background: white;
+            color: var(--primary);
+        }
+
+        /* PROFILE */
+        .profile {
+            text-align: center;
+            color: white;
+            margin-bottom: 28px;
+        }
+
+        .profile-image {
+            width: 112px;
+            height: 112px;
+            margin: 0 auto 18px;
+            border-radius: 50%;
+            padding: 4px;
+            background: linear-gradient(135deg, #FFFFFF, #94A3B8);
+            box-shadow: 0 10px 35px rgba(0,0,0,.25);
+        }
+
+        .profile-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 3px solid var(--primary);
+        }
+
+        .profile h1 {
+            font-size: 23px;
+            font-weight: 800;
+            letter-spacing: -.5px;
+            margin-bottom: 7px;
+        }
+
+        .username {
+            font-size: 13px;
+            color: #CBD5E1;
+            margin-bottom: 15px;
+        }
+
+        .description {
+            max-width: 470px;
+            margin: auto;
+            font-size: 13px;
+            line-height: 1.8;
+            color: #E2E8F0;
+        }
+
+        .verified {
+            color: #CBD5E1;
+            font-size: 15px;
+            margin-left: 4px;
+        }
+
+        /* SOCIAL MEDIA */
+        .social-section {
+            margin-bottom: 27px;
+        }
+
+        .social-title {
+            text-align: center;
+            color: #CBD5E1;
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            margin-bottom: 14px;
+        }
+
+        .social-grid {
+            width: min(100%, 520px);
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+        }
+
+        .social-item {
+            text-decoration: none;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            font-size: 10px;
+            font-weight: 600;
+            transition: .3s;
+        }
+
+        .social-icon {
+            width: 48px;
+            height: 48px;
+            display: grid;
+            place-items: center;
+            border-radius: 17px;
+            background: rgba(255,255,255,.12);
+            border: 1px solid var(--border);
+            font-size: 19px;
+            transition: .3s;
+        }
+
+        .social-item:hover .social-icon {
+            background: white;
+            color: var(--primary);
+            transform: translateY(-5px);
+        }
+
+        /* LINKS */
+        .links-section {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 14px;
+        }
+
+        .section-heading {
+            grid-column: 1 / -1;
+            color: white;
+            font-size: 13px;
+            font-weight: 800;
+            letter-spacing: 1.5px;
+            margin-bottom: 2px;
+        }
+
+        .link-card {
+            min-width: 0;
+            min-height: 76px;
+            display: flex;
+            align-items: center;
+            gap: 13px;
+            padding: 14px 16px;
+            text-decoration: none;
+            color: var(--text);
+            background: rgba(255,255,255,.96);
+            border: 1px solid rgba(255,255,255,.5);
+            border-radius: 18px;
+            box-shadow: 0 8px 20px rgba(0,0,0,.10);
+            transition: .3s ease;
+        }
+
+        .link-card:hover {
+            transform: translateY(-4px);
+            background: #E2E8F0;
+            box-shadow: 0 12px 25px rgba(0,0,0,.2);
+        }
+
+        .link-icon {
+            width: 45px;
+            height: 45px;
+            flex-shrink: 0;
+            display: grid;
+            place-items: center;
+            color: white;
+            background: var(--secondary);
+            border-radius: 14px;
+            font-size: 18px;
+        }
+
+        .link-content {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .link-content h3 {
+            font-size: 13px;
+            font-weight: 800;
+            line-height: 1.4;
+            margin-bottom: 4px;
+            overflow-wrap: anywhere;
+        }
+
+        .link-content p {
+            font-size: 11px;
+            line-height: 1.5;
+            color: var(--muted);
+        }
+
+        .link-arrow {
+            flex-shrink: 0;
+            color: #64748B;
+            font-size: 13px;
+        }
+
+        /* CONTACT BANNER */
+        .contact-banner {
+            width: 100%;
+            margin-top: 23px;
+            padding: 17px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            color: white;
+            border-radius: 18px;
+            background: linear-gradient(120deg, #26364D, #475569);
+            border: 1px solid rgba(255,255,255,.25);
+            transition: .3s;
+        }
+
+        .contact-banner:hover {
+            transform: translateY(-3px);
+            background: #475569;
+        }
+
+        .contact-icon {
+            width: 42px;
+            height: 42px;
+            flex-shrink: 0;
+            display: grid;
+            place-items: center;
+            border-radius: 13px;
+            background: rgba(255,255,255,.15);
+            font-size: 19px;
+        }
+
+        .contact-content {
+            flex: 1;
+        }
+
+        .contact-content h3 {
+            font-size: 12px;
+            margin-bottom: 4px;
+        }
+
+        .contact-content p {
+            font-size: 10px;
+            color: #E2E8F0;
+        }
+
+        .contact-arrow {
+            font-size: 13px;
+            color: #CBD5E1;
+        }
+
+        /* FOOTER */
+        footer {
+            margin-top: auto;
+            padding-top: 35px;
+            text-align: center;
+            color: #CBD5E1;
+        }
+
+        .footer-line {
+            width: 45px;
+            height: 3px;
+            margin: 0 auto 15px;
+            border-radius: 10px;
+            background: #94A3B8;
+        }
+
+        footer p {
+            font-size: 10px;
+            line-height: 1.8;
+        }
+
+        footer strong {
+            color: white;
+        }
+
+        .footer-social {
+            margin-top: 10px;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        /* DESKTOP / WINDOWS */
+        @media (min-width: 1024px) {
+            .container {
+                padding-top: 42px;
+                padding-bottom: 35px;
+            }
+
+            .topbar {
+                margin-bottom: 42px;
+            }
+
+            .profile {
+                margin-bottom: 36px;
+            }
+
+            .profile-image {
+                width: 125px;
+                height: 125px;
+            }
+
+            .profile h1 {
+                font-size: 29px;
+            }
+
+            .description {
+                font-size: 14px;
+            }
+
+            .social-section {
+                margin-bottom: 36px;
+            }
+
+            .social-icon {
+                width: 54px;
+                height: 54px;
+                font-size: 21px;
+            }
+
+            .social-item {
+                font-size: 11px;
+            }
+
+            .section-heading {
+                font-size: 14px;
+            }
+
+            .link-card {
+                min-height: 82px;
+                border-radius: 20px;
+            }
+
+            .link-icon {
+                width: 48px;
+                height: 48px;
+                font-size: 19px;
+            }
+
+            .link-content h3 {
+                font-size: 14px;
+            }
+
+            .link-content p {
+                font-size: 12px;
+            }
+
+            .contact-banner {
+                padding: 20px;
+            }
+        }
+
+        /* TABLET */
+        @media (max-width: 767px) {
+            .container {
+                width: min(100% - 36px, 520px);
+                padding-top: 25px;
+                padding-bottom: 25px;
+            }
+
+            .links-section {
+                grid-template-columns: 1fr;
+                gap: 12px;
+            }
+
+            .section-heading {
+                margin-bottom: 3px;
+            }
+
+            .link-card {
+                min-height: 70px;
+            }
+        }
+
+        /* SMARTPHONE */
+        @media (max-width: 480px) {
+            .container {
+                width: calc(100% - 32px);
+                padding-top: 20px;
+                padding-bottom: 22px;
+            }
+
+            .topbar {
+                margin-bottom: 27px;
+            }
+
+            .brand {
+                font-size: 10px;
+                letter-spacing: .7px;
+            }
+
+            .brand-icon {
+                width: 33px;
+                height: 33px;
+            }
+
+            .share-button {
+                width: 40px;
+                height: 40px;
+            }
+
+            .profile-image {
+                width: 104px;
+                height: 104px;
+                margin-bottom: 15px;
+            }
+
+            .profile h1 {
+                font-size: clamp(20px, 6vw, 23px);
+            }
+
+            .description {
+                font-size: 12px;
+                line-height: 1.75;
+                padding-inline: 4px;
+            }
+
+            .social-grid {
+                gap: 8px;
+            }
+
+            .social-icon {
+                width: 46px;
+                height: 46px;
+                border-radius: 15px;
+                font-size: 18px;
+            }
+
+            .social-item {
+                font-size: 10px;
+            }
+
+            .link-card {
+                min-height: 68px;
+                padding: 11px 12px;
+                gap: 11px;
+                border-radius: 16px;
+            }
+
+            .link-icon {
+                width: 41px;
+                height: 41px;
+                border-radius: 12px;
+                font-size: 16px;
+            }
+
+            .link-content h3 {
+                font-size: 11px;
+            }
+
+            .link-content p {
+                font-size: 9px;
+            }
+
+            .contact-banner {
+                padding: 15px;
+                gap: 10px;
+            }
+
+            footer {
+                padding-top: 30px;
+            }
+        }
+
+        /* SMARTPHONE KECIL */
+        @media (max-width: 350px) {
+            .container {
+                width: calc(100% - 26px);
+            }
+
+            .brand {
+                font-size: 9px;
+            }
+
+            .social-grid {
+                gap: 5px;
+            }
+
+            .social-item {
+                font-size: 9px;
+            }
+
+            .social-icon {
+                width: 42px;
+                height: 42px;
+            }
+
+            .link-content p {
+                font-size: 8px;
+            }
+        }
+
+        /* INTERACTION */
+        @media (hover: hover) and (pointer: fine) {
+            .link-card:hover,
+            .contact-banner:hover {
+                transform: translateY(-3px);
+            }
+
+            .social-item:hover .social-icon {
+                transform: translateY(-4px);
+            }
+        }
+
+        .link-card:active,
+        .contact-banner:active,
+        .social-item:active,
+        .share-button:active {
+            transform: scale(.98);
+        }
+
+        a, button {
+            -webkit-tap-highlight-color: transparent;
+            touch-action: manipulation;
+        }
+
+        a:focus-visible,
+        button:focus-visible {
+            outline: 3px solid #CBD5E1;
+            outline-offset: 4px;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                scroll-behavior: auto !important;
+                transition-duration: .01ms !important;
+                animation-duration: .01ms !important;
+                animation-iteration-count: 1 !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="background"></div>
+
+    <main class="container">
+
+        <!-- TOPBAR -->
+        <header class="topbar">
+            <div class="brand">
+                <div class="brand-icon">
+                    <i class="fa-solid fa-link"></i>
+                </div>
+                <span>PELAJAR NU MAGETAN</span>
+            </div>
+
+            <button class="share-button"
+                    onclick="sharePage()"
+                    aria-label="Bagikan halaman">
+                <i class="fa-solid fa-share-nodes"></i>
+            </button>
+        </header>
+
+        <!-- PROFILE -->
+        <section class="profile">
+
+            <div class="profile-image">
+                <img src="logo-pelajar-nu.png"
+                     alt="Logo Pelajar NU Magetan">
+            </div>
+
+            <h1>
+                Pelajar NU Magetan
+                <i class="fa-solid fa-circle-check verified"></i>
+            </h1>
+
+            <p class="username">@pelajarnumagetan</p>
+
+            <p class="description">
+                Wadah pelajar Nahdlatul Ulama Kabupaten Magetan.
+                Bersama membangun generasi yang berilmu,
+                berakhlak, dan berdaya.
+                <br>
+                <strong>Belajar, Berjuang, Bertaqwa.</strong>
+            </p>
+
+        </section>
+
+        <!-- SOCIAL MEDIA -->
+        <section class="social-section">
+
+            <p class="social-title">TEMUKAN KAMI DI</p>
+
+            <div class="social-grid">
+
+                <a href="https://instagram.com/pelajarnumagetan"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="social-item">
+                    <div class="social-icon">
+                        <i class="fa-brands fa-instagram"></i>
+                    </div>
+                    <span>Instagram</span>
+                </a>
+
+                <a href="https://facebook.com/pelajarnumagetan"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="social-item">
+                    <div class="social-icon">
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </div>
+                    <span>Facebook</span>
+                </a>
+
+                <a href="https://youtube.com/@pelajarnumagetan"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="social-item">
+                    <div class="social-icon">
+                        <i class="fa-brands fa-youtube"></i>
+                    </div>
+                    <span>YouTube</span>
+                </a>
+
+                <a href="https://instagram.com/dutapelajarnu_magetan"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="social-item">
+                    <div class="social-icon">
+                        <i class="fa-solid fa-users"></i>
+                    </div>
+                    <span>Duta Pelajar</span>
+                </a>
+
+            </div>
+        </section>
+
+        <!-- MAIN LINKS -->
+        <section class="links-section">
+
+            <h2 class="section-heading">
+                JELAJAHI PELAJAR NU
+            </h2>
+
+            <a href="https://pelajarnumagetan.or.id"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="link-card">
+
+                <div class="link-icon">
+                    <i class="fa-solid fa-globe"></i>
+                </div>
+
+                <div class="link-content">
+                    <h3>Website Resmi</h3>
+                    <p>Informasi dan berita Pelajar NU Magetan</p>
+                </div>
+
+                <i class="fa-solid fa-arrow-up-right-from-square link-arrow"></i>
+            </a>
+
+            <a href="https://instagram.com/pelajarnumagetan"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="link-card">
+
+                <div class="link-icon">
+                    <i class="fa-brands fa-instagram"></i>
+                </div>
+
+                <div class="link-content">
+                    <h3>Instagram Pelajar NU Magetan</h3>
+                    <p>Dokumentasi, informasi, dan kegiatan organisasi</p>
+                </div>
+
+                <i class="fa-solid fa-arrow-up-right-from-square link-arrow"></i>
+            </a>
+
+            <a href="https://instagram.com/dutapelajarnu_magetan"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="link-card">
+
+                <div class="link-icon">
+                    <i class="fa-solid fa-crown"></i>
+                </div>
+
+                <div class="link-content">
+                    <h3>Duta Pelajar NU Magetan</h3>
+                    <p>Kenali dan ikuti aktivitas Duta Pelajar NU</p>
+                </div>
+
+                <i class="fa-solid fa-arrow-up-right-from-square link-arrow"></i>
+            </a>
+
+            <a href="https://www.youtube.com/@pelajarnumagetan"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="link-card">
+
+                <div class="link-icon">
+                    <i class="fa-brands fa-youtube"></i>
+                </div>
+
+                <div class="link-content">
+                    <h3>YouTube Pelajar NU Magetan</h3>
+                    <p>Video kegiatan dan dokumentasi organisasi</p>
+                </div>
+
+                <i class="fa-solid fa-arrow-up-right-from-square link-arrow"></i>
+            </a>
+
+            <a href="https://facebook.com/pelajarnumagetan"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="link-card">
+
+                <div class="link-icon">
+                    <i class="fa-brands fa-facebook-f"></i>
+                </div>
+
+                <div class="link-content">
+                    <h3>Facebook Pelajar NU Magetan</h3>
+                    <p>Terhubung dengan komunitas kami</p>
+                </div>
+
+                <i class="fa-solid fa-arrow-up-right-from-square link-arrow"></i>
+            </a>
+
+        </section>
+
+        <!-- CONTACT -->
+        <a href="https://wa.me/6281234567890"
+           target="_blank"
+           rel="noopener noreferrer"
+           class="contact-banner">
+
+            <div class="contact-icon">
+                <i class="fa-brands fa-whatsapp"></i>
+            </div>
+
+            <div class="contact-content">
+                <h3>Hubungi Kami</h3>
+                <p>Ingin berkolaborasi atau bertanya?</p>
+            </div>
+
+            <i class="fa-solid fa-arrow-right contact-arrow"></i>
+        </a>
+
+        <!-- FOOTER -->
+        <footer>
+            <div class="footer-line"></div>
+
+            <p>
+                <strong>PELAJAR NU MAGETAN</strong>
+                <br>
+                Belajar, Berjuang, Bertaqwa
+            </p>
+
+            <p class="footer-social">
+                #PelajarNU #IPNU #IPPNU #Magetan
+            </p>
+
+            <p style="margin-top: 15px;">
+                © 2026 Pelajar NU Magetan. All Rights Reserved.
+            </p>
+        </footer>
+
+    </main>
+
+    <!-- JAVASCRIPT -->
+    <script>
+        async function sharePage() {
+
+            const shareData = {
+                title: 'Pelajar NU Magetan',
+                text: 'Temukan seluruh media sosial Pelajar NU Magetan di sini!',
+                url: window.location.href
+            };
+
+            // Fitur share untuk Android, iPhone, dan browser pendukung
+            if (navigator.share) {
+                try {
+                    await navigator.share(shareData);
+                } catch (error) {
+                    if (error.name !== 'AbortError') {
+                        console.error('Gagal membagikan halaman:', error);
+                    }
+                }
+
+                return;
+            }
+
+            // Fallback untuk Windows dan browser lain
+            try {
+
+                if (navigator.clipboard && window.isSecureContext) {
+
+                    await navigator.clipboard.writeText(
+                        window.location.href
+                    );
+
+                } else {
+
+                    const tempInput = document.createElement('textarea');
+
+                    tempInput.value = window.location.href;
+                    tempInput.style.position = 'fixed';
+                    tempInput.style.opacity = '0';
+
+                    document.body.appendChild(tempInput);
+
+                    tempInput.select();
+
+                    const copied = document.execCommand('copy');
+
+                    tempInput.remove();
+
+                    if (!copied) {
+                        throw new Error('Copy tidak didukung browser.');
+                    }
+                }
+
+                alert('Link berhasil disalin!');
+
+            } catch (error) {
+
+                alert(
+                    'Tidak dapat menyalin link. Silakan salin alamat halaman secara manual.'
+                );
+
+            }
+        }
+    </script>
+
+</body>
+</html>
